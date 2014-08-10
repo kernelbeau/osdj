@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load webdesign %}
+
+{% block title %}{{ block.super }} - Welcome{% endblock title %}
+
+{% block content_col %}
+
+  <h3>Welcome</h3>
+
+  <p>{% lorem 5 p %}</p>
+
+{% endblock content_col %}

@@ -1,0 +1,18 @@
+{% extends "admin/base_site.html" %}
+{% load i18n %}
+{% load url from future %}
+
+{% block breadcrumbs %}
+<DIV class="breadcrumbs">
+<A href="{% url 'admin:index' %}">{% trans 'Home' %}</A>
+&rsaquo; {% trans 'Server error' %}
+</DIV>
+{% endblock %}
+
+{% block title %}{% trans 'Server error (500)' %}{% endblock %}
+
+{% block content %}
+<H1>{% trans 'Server Error <em>(500)</em>' %}</H1>
+<P>{% trans "There's been an error. It's been reported to the site administrators via e-mail and should be fixed shortly. Thanks for your patience." %}</P>
+
+{% endblock %}
