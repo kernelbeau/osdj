@@ -17,14 +17,14 @@ if [ "$PYTHON_CURRENT" != "$PYTHON_VERSION" ]; then
 	make install
 fi
 
-if [ ! -d $OPENSHIFT_DATA_DIR/virtualenv ]; then
-	echo "*** Install virtualenv-${VIRTUALENV_VERSION}"
-	cd $OPENSHIFT_TMP_DIR
-	wget https://pypi.python.org/packages/source/v/virtualenv/virtualenv-${VIRTUALENV_VERSION}.tar.gz
-	tar -zxf virtualenv-${VIRTUALENV_VERSION}.tar.gz
-	cd virtualenv-${VIRTUALENV_VERSION}
-	$OPENSHIFT_DATA_DIR/bin/python virtualenv.py $OPENSHIFT_DATA_DIR/virtualenv
-fi
+#if [ ! -d $OPENSHIFT_DATA_DIR/virtualenv ]; then
+	#echo "*** Install virtualenv-${VIRTUALENV_VERSION}"
+	#cd $OPENSHIFT_TMP_DIR
+	#wget https://pypi.python.org/packages/source/v/virtualenv/virtualenv-${VIRTUALENV_VERSION}.tar.gz
+	#tar -zxf virtualenv-${VIRTUALENV_VERSION}.tar.gz
+	#cd virtualenv-${VIRTUALENV_VERSION}
+	#$OPENSHIFT_DATA_DIR/bin/python virtualenv.py $OPENSHIFT_DATA_DIR/virtualenv
+#fi
 
 #if [ ! -d $OPENSHIFT_DATA_DIR/nginx/sbin ]; then
 	#echo "*** Install nginx-'${NGINX_VERSION}'"
