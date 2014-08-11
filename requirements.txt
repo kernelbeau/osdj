@@ -1,10 +1,10 @@
 ## pip project requirements
 
-Django==1.6.5
+#Django==1.6.5
 #psycopg2
 #South==1.0
 #unipath
 #doctools
 
-uwsgi
-python-memcached
+#uwsgi
+#python-memcached
