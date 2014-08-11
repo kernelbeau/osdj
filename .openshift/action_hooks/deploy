@@ -1,25 +1,25 @@
 #!/bin/bash
 
-function substitute_variables() {
-	sed -e "s@\$OPENSHIFT_DIY_LOG_DIR@$OPENSHIFT_DIY_LOG_DIR@" \
-		-e "s@\$OPENSHIFT_TMP_DIR@$OPENSHIFT_TMP_DIR@" \
-		-e "s@\$OPENSHIFT_REPO_DIR@$OPENSHIFT_REPO_DIR@" \
-		-e "s@\$OPENSHIFT_DATA_DIR@$OPENSHIFT_DATA_DIR@" \
-		-e "s@\$OPENSHIFT_DIY_IP@$OPENSHIFT_DIY_IP@" \
-		-e "s@\$OPENSHIFT_DIY_PORT@$OPENSHIFT_DIY_PORT@" \
-		-e "s@\$APP_NAME@`cat $OPENSHIFT_REPO_DIR/.app_name`@" \
-        $1 > $2
-}
+#function substitute_variables() {
+	#sed -e "s@\$OPENSHIFT_DIY_LOG_DIR@$OPENSHIFT_DIY_LOG_DIR@" \
+		#-e "s@\$OPENSHIFT_TMP_DIR@$OPENSHIFT_TMP_DIR@" \
+		#-e "s@\$OPENSHIFT_REPO_DIR@$OPENSHIFT_REPO_DIR@" \
+		#-e "s@\$OPENSHIFT_DATA_DIR@$OPENSHIFT_DATA_DIR@" \
+		#-e "s@\$OPENSHIFT_DIY_IP@$OPENSHIFT_DIY_IP@" \
+		#-e "s@\$OPENSHIFT_DIY_PORT@$OPENSHIFT_DIY_PORT@" \
+		#-e "s@\$APP_NAME@`cat $OPENSHIFT_REPO_DIR/.app_name`@" \
+        #$1 > $2
+#}
 
-source $OPENSHIFT_DATA_DIR/virtualenv/bin/activate
+#source $OPENSHIFT_DATA_DIR/virtualenv/bin/activate
 
-mkdir -p $OPENSHIFT_DATA_DIR/configs
-mkdir -p $OPENSHIFT_DATA_DIR/static/static
-mkdir -p $OPENSHIFT_DATA_DIR/static/media
-substitute_variables $OPENSHIFT_REPO_DIR/configs/nginx.conf $OPENSHIFT_DATA_DIR/nginx/conf/nginx.conf
-substitute_variables $OPENSHIFT_REPO_DIR/configs/uwsgi.yaml $OPENSHIFT_DATA_DIR/configs/uwsgi.yaml
+#mkdir -p $OPENSHIFT_DATA_DIR/configs
+#mkdir -p $OPENSHIFT_DATA_DIR/static/static
+#mkdir -p $OPENSHIFT_DATA_DIR/static/media
+#substitute_variables $OPENSHIFT_REPO_DIR/configs/nginx.conf $OPENSHIFT_DATA_DIR/nginx/conf/nginx.conf
+#substitute_variables $OPENSHIFT_REPO_DIR/configs/uwsgi.yaml $OPENSHIFT_DATA_DIR/configs/uwsgi.yaml
 
-# boot django database setup and static file collection
-export DJANGO_SETTINGS_MODULE="my_django.settings"
-python ${OPENSHIFT_REPO_DIR}manage.py syncdb --noinput
-python ${OPENSHIFT_REPO_DIR}manage.py collectstatic --clear --noinput
+## boot django database setup and static file collection
+#export DJANGO_SETTINGS_MODULE="my_django.settings"
+#python ${OPENSHIFT_REPO_DIR}manage.py syncdb --noinput
+#python ${OPENSHIFT_REPO_DIR}manage.py collectstatic --clear --noinput

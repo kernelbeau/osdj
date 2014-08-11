@@ -1,9 +1,9 @@
 #!/bin/bash
 
-source $OPENSHIFT_DATA_DIR/virtualenv/bin/activate
+#source $OPENSHIFT_DATA_DIR/virtualenv/bin/activate
 
-$OPENSHIFT_DATA_DIR/nginx/sbin/nginx -s stop
-uwsgi --stop $OPENSHIFT_TMP_DIR/uwsgi.pid
-killall memcached
+#$OPENSHIFT_DATA_DIR/nginx/sbin/nginx -s stop
+#uwsgi --stop $OPENSHIFT_TMP_DIR/uwsgi.pid
+#killall memcached
 
-exit 0
+#exit 0
